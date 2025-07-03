@@ -1,0 +1,123 @@
+.container{
+  max-width: 1250px;
+  margin: auto;
+  padding: 20px;
+}
+.custom-carousel {
+  height: 80vh; /* Full viewport height */
+  overflow: hidden;
+}
+
+.custom-carousel .carousel-item img {
+  height: 80vh;
+  object-fit: cover;
+}
+/* Custom style for captions */
+.carousel-caption {
+  bottom: 30%;
+  text-align: center;
+}
+
+.carousel-indicators{
+  bottom: 20%;
+}
+
+.carousel-caption h5 {
+  font-size: 3rem;        /* Bigger font size */
+  font-weight: 700;       /* Bold */
+  color: #fff;            /* White text */
+}
+
+.carousel-caption p {
+  font-size: 1.5rem;      /* Medium font size */
+  font-weight: 400;       /* Normal weight */
+  color: #eee;            /* Light gray text */
+}
+
+.custom-btn {
+  background-color: rgba(128, 128, 128, 0.5); /* grey with transparency */
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.custom-btn:hover {
+  background-color: rgba(100, 100, 100, 0.7);
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  max-width: 800px !important;
+  width: 90%;
+  margin: auto;
+  padding: 0.9rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  justify-content: space-between;
+  gap: 10px;
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.search-icon {
+  color: #888;
+  font-size: 1.2rem;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: transparent;
+}
+
+.search-location {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.95rem;
+  color: #555;
+  white-space: nowrap;
+  border-left: 2px solid #ddd;
+  padding-left: 5px;
+}
+
+.location-icon {
+  font-size: 1rem;
+  color: #888;
+}
+
+.stories{
+  background-color: #1f2937 !important;
+}
+.feature-story {
+  color: linear-gradient(to right, #00ff99, #ffcc00) !important;
+  /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}
+
+.category-card {
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  transform: translateY(-3px);
+}
+
+.category-card img {
+  transition: opacity 0.2s;
+}
+
+.category-card:hover img {
+  opacity: 0.9;
+}
