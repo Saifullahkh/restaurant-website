@@ -121,3 +121,20 @@
 .category-card:hover img {
   opacity: 0.9;
 }
+/* 992px se upar 8 cards per row */
+@media (min-width: 992px) {
+  .custom-col-lg-up {
+    flex: 0 0 12.5%;   /* 100/8 = 12.5% */
+    max-width: 12.5%;
+  }
+}
+@media (max-width: 922px) {
+  .slick-prev {
+    left: 8px;
+    z-index: 1;
+  }
+  .slick-next{
+    right: 8px;
+    z-index: 1;
+  }
+}

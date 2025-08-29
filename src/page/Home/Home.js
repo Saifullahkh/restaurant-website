@@ -1,7 +1,8 @@
 import React from 'react';
 import { FiSearch, FiMapPin } from 'react-icons/fi';
+import { FaStore, FaChartLine, FaDollarSign, FaLock } from 'react-icons/fa';
 import Slider from "react-slick";
-import img1 from '../../assets/carousel-1.jpg'
+import img1 from '../../assets/carousel-1.jpg';
 import img2 from '../../assets/carousel-2.jpg';
 import img3 from '../../assets/carousel-3.jpg';
 import './Home.css'; // 👈 Create and import a CSS file
@@ -136,9 +137,9 @@ function Home() {
     </section>
 
     {/* Explore Categories */}
-    <div className="container mt-5 px-0">
+    <div className="container mt-5">
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h2 className="fw-bold gradient-text">Explore Categories</h2>
+        <h4 className="fw-bold gradient-text">Explore Categories</h4>
         <div className="">
           <button className="btn text-success fw-bold fs-5">
             See All →
@@ -146,26 +147,33 @@ function Home() {
         </div>
       </div>
       
-      <div className="d-flex flex-nowrap  pb-2" >
-        {categories.map((category, index) => (
-          <div key={index} className="flex-shrink-0 text-center" style={{ width: "12.5%" }}>
-            <img 
-              src={category.image} 
-              alt={category.name}
-              className="img-fluid rounded mb-2"
-              style={{ 
-                height: "130px",
-                width: "100%",
-                objectFit: "cover",
-                maxWidth: "130px"
-              }}
-            />
-            <h6 className="fw-bold" style={{ fontSize: "0.85rem" }}>{category.name}</h6>
-          </div>
-        ))}
-      </div>
+     <div className="row g-md-3 pb-2">
+  {categories.map((category, index) => (
+    <div 
+      key={index} 
+      className="col-6 col-md-3 col-lg-2 custom-col-lg-up text-center"
+    >
+      <img 
+        src={category.image} 
+        alt={category.name}
+        className="img-fluid rounded mb-2"
+        style={{ 
+          height: "130px",
+          objectFit: "cover",
+          maxWidth: "130px",
+          width: "100%"
+        }}
+      />
+      <h6 className="fw-bold" style={{ fontSize: "0.85rem" }}>
+        {category.name}
+      </h6>
+    </div>
+  ))}
+</div>
+
     </div>
 
+    
     <RestaurantList
       data={restaurant}
       category="Pakistani"
@@ -181,7 +189,122 @@ function Home() {
       </div>
     </div>
     
+    {/* Vendor Section */}
+    <div className=" text-white  container rounded-4">
+      <div className="row align-items-center bg-success bg-gradient p-5 shadow-sm" style={{ borderTopLeftRadius: "1rem", borderTopRightRadius: "1rem" }}>
+        {/* Left Content */}
+        <div className="col-lg-6">
+          <span className="badge bg-light text-success fw-semibold mb-3 fs-6 rounded-pill">
+            Join foodihub Today
+          </span>
+          <h1 className="fw-bold mb-3 ">Grow Your Business with foodieHub</h1>
+          <p className="mb-4">
+            Join thousands of successful vendors and reach millions of customers.
+            Start selling your products online with just a few simple steps.
+          </p>
+          <div className="row text-white mb-4">
+            <div className="col-6 mb-3 d-flex align-items-center">
+              <FaStore className="me-2" />
+              Create your store
+            </div>
+            <div className="col-6 mb-3 d-flex align-items-center">
+              <FaChartLine className="me-2" />
+              Track your sales
+            </div>
+            <div className="col-6 mb-3 d-flex align-items-center">
+              <FaDollarSign className="me-2" />
+              Boost your revenue
+            </div>
+            <div className="col-6 mb-3 d-flex align-items-center">
+              <FaLock className="me-2" />
+              Secure payments
+            </div>
+          </div>
+          <button className="btn btn-light text-success fw-semibold fs-5 px-4 py-2 rounded-pill">
+            Register as a Seller →
+          </button>
+        </div>
 
+        {/* Right Image */}
+       <div className="col-lg-6 text-center mt-4 mt-lg-0">
+          <img
+            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" // Replace with actual URL
+            alt="Food business illustration"
+            className="img-fluid rounded-4"
+            style={{ maxHeight: "300px", objectFit: "cover" }}
+          />
+        </div>
+      </div>
+
+      {/* Stats Bar */}
+      <div className="row bg-white text-dark  p-4 d-flex justify-content-around flex-wrap shadow-sm " style={{ borderBottomLeftRadius: "1rem", borderBottomRightRadius: "1rem" }}>
+        <div className="col-md-3 col-6 text-center px-3">
+          <h4 className="fw-bold">5000+</h4>
+          <p className="mb-0">Active Vendors</p>
+        </div>
+        <div className="col-md-3 col-6 text-center px-3">
+          <h4 className="fw-bold">1M+</h4>
+          <p className="mb-0">Daily Orders</p>
+        </div>
+        <div className="col-md-3 col-6 text-center px-3">
+          <h4 className="fw-bold">50+</h4>
+          <p className="mb-0">Cities</p>
+        </div>
+        <div className="col-md-3 col-6 text-center px-3">
+          <h4 className="fw-bold">4.8/5</h4>
+          <p className="mb-0">Vendor Satisfaction</p>
+        </div>
+      </div>
+    </div>
+      
+    {/* Pakistani Cuisine Section */}
+     <RestaurantList
+        data={restaurant}
+        category="Pakistani"
+        title="Pakistani Cuisine"
+     />
+    
+    {/* BBQ Delights Section */}
+      <RestaurantList
+        data={restaurant}
+        category="BBQ"
+        title="BBQ Delights"
+      />
+
+    {/* Biryani Specials Section */}  
+       <RestaurantList
+        data={restaurant}
+        category="Biryani"
+        title="Biryani Specials"
+      />
+
+    {/* Fast Food Favorites Section */}
+      <RestaurantList
+        data={restaurant}
+        category="Fast Food"
+        title="Fast Food"
+      />
+
+    {/* Desi Food Section */}
+       <RestaurantList
+        data={restaurant}
+        category="Desi"
+        title="Desi Food"
+      />
+
+    {/* Chinese Cuisine Section */}
+      <RestaurantList
+        data={restaurant}
+        category="Chinese"
+        title="Chinese"
+      />
+
+    {/* Pizza Specials Section */}
+      <RestaurantList
+        data={restaurant}
+        category="Pizza"
+        title="Pizza"
+      />
     </>
   );
 }
