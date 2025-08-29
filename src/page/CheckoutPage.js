@@ -194,7 +194,7 @@ const CheckoutPage = () => {
                     </div>
                   </div>
 
-                  <div className="d-flex justify-content-end mt-4">
+                  <div className="d-flex justify-content-md-end justify-content-center mt-4">
                     <button type="button" className="btn btn-primary" onClick={handleNextStep}>
                       Continue to Payment
                     </button>
@@ -385,7 +385,7 @@ const CheckoutPage = () => {
                     <FaArrowLeft className="me-2" />
                     Back
                   </button>
-                  <button type="button" className="btn btn-success" onClick={handleSubmit}>
+                  <button type="button" className="btn btn-success " onClick={handleSubmit}>
                     Confirm Order
                   </button>
                 </div>
@@ -621,15 +621,20 @@ const CheckoutPage = () => {
         }
         
         @media (max-width: 768px) {
-          .checkout-steps {
-            flex-direction: column;
+          .checkout-steps { 
             align-items: flex-start;
-            gap: 1rem;
+            gap: 0.6rem;
+          }
+          .step{
+            padding: 0 0.8rem;
+          }
+         .step:not(:last-child):after {
+            left: 100%;
+            transform: translateX(-50%);
+            width: 60px;       
+            right: auto;      /* reset right */
           }
           
-          .step:not(:last-child):after {
-            display: none;
-          }
         }
       `}</style>
     </div>

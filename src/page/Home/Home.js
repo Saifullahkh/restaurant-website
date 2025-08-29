@@ -103,7 +103,7 @@ function Home() {
         />
         <div className="search-location">
           <FiMapPin className="location-icon" />
-          <span>Islamabad</span>
+          <span className='d-none d-md-inline'>Islamabad</span>
         </div>
       </div>
 
@@ -220,7 +220,7 @@ function Home() {
               Secure payments
             </div>
           </div>
-          <button className="btn btn-light text-success fw-semibold fs-5 px-4 py-2 rounded-pill">
+          <button className="btn btn-light  text-success fw-semibold fs-5 px-md-4 px-3 py-2 rounded-pill">
             Register as a Seller →
           </button>
         </div>
@@ -238,19 +238,19 @@ function Home() {
 
       {/* Stats Bar */}
       <div className="row bg-white text-dark  p-4 d-flex justify-content-around flex-wrap shadow-sm " style={{ borderBottomLeftRadius: "1rem", borderBottomRightRadius: "1rem" }}>
-        <div className="col-md-3 col-6 text-center px-3">
+        <div className="col-md-3 col-6 text-center px-3 mb-md-0 mb-3">
           <h4 className="fw-bold">5000+</h4>
           <p className="mb-0">Active Vendors</p>
         </div>
-        <div className="col-md-3 col-6 text-center px-3">
+        <div className="col-md-3 col-6 text-center px-3 mb-md-0 mb-3">
           <h4 className="fw-bold">1M+</h4>
           <p className="mb-0">Daily Orders</p>
         </div>
-        <div className="col-md-3 col-6 text-center px-3">
+        <div className="col-md-3 col-6 text-center px-3 mb-md-0 mb-3">
           <h4 className="fw-bold">50+</h4>
           <p className="mb-0">Cities</p>
         </div>
-        <div className="col-md-3 col-6 text-center px-3">
+        <div className="col-md-3 col-6 text-center px-3 mb-md-0 mb-3">
           <h4 className="fw-bold">4.8/5</h4>
           <p className="mb-0">Vendor Satisfaction</p>
         </div>

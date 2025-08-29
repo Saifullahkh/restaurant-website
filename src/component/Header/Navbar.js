@@ -236,7 +236,7 @@ const Navbar = () => {
             </li>
 
              <li className="nav-item position-relative  d-md-none d-inline">
-                <Link to="/offers" className="nav-link fw-medium d-flex align-items-center gap-3 px-4 py-3">
+                <Link to="/offers" className="nav-link fw-medium d-flex align-items-center gap-3 px-4 py-3" onClick={() => document.getElementById('offcanvasCloseBtn').click()}>
                   <div className="rounded-circle p-2 d-flex align-items-center justify-content-center" 
                     style={{ backgroundColor: '#fff4e6', color: '#ff9f43', width: '40px', height: '40px' }}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
