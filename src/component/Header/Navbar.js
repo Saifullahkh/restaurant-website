@@ -62,11 +62,11 @@ const Navbar = () => {
   return (
     <>
       {/* Top Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-1 sticky-top">
-        <div className="container ">
+      <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm  sticky-top">
+        <div className="container py-1">
           {/* Brand Logo */}
           <Link to="/" className="navbar-brand fw-bold">
-            <img src={logo} alt="E-Mart Logo" style={{ height: '60px' }} />
+            <img src={logo} alt="E-Mart Logo" style={{ height: '40px' }} />
           </Link>
 
           {/* Navbar Items */}

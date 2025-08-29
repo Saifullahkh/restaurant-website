@@ -220,7 +220,7 @@ function Home() {
               Secure payments
             </div>
           </div>
-          <button className="btn btn-light  text-success fw-semibold fs-5 px-md-4 px-3 py-2 rounded-pill">
+          <button className="btn btn-light btn-sm  text-success fw-semibold  px-md-4 px-3 py-2 rounded-pill">
             Register as a Seller →
           </button>
         </div>
