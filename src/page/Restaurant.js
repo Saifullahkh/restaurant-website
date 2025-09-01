@@ -76,7 +76,7 @@ const Restaurant = () => {
       >
         <div className="container position-relative z-1">
           <h1 className="fw-bold display-4 mb-4 animate__animated animate__fadeInDown">
-            Culinary Excellence Awaits
+            A Feast of Flavors Awaits
           </h1>
           <p className="lead fs-5 mb-5 mx-auto" style={{maxWidth: "600px"}}>
             Discover premium dining experiences from the finest restaurants in town

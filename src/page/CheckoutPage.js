@@ -45,7 +45,7 @@ const CheckoutPage = () => {
     const newOrderNumber = `ORD-${Math.floor(100000 + Math.random() * 900000)}`;
     setOrderNumber(newOrderNumber);
     setOrderPlaced(true);
-    clearCart();
+    
   };
 
   const calculateTotal = () => {

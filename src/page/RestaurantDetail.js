@@ -6,8 +6,16 @@ import { CartContext } from "./CartContext";
 import { WishlistContext } from "./WishlistContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import RestaurantCard from '../component/RestaurantCard' // ✅ Reusable card
 
 const RestaurantDetail = () => {
+   const [reviews, setReviews] = useState([
+    { name: "Ali Khan", rating: 4, comment: "Great food and friendly staff! Will visit again." },
+    { name: "Sara Ahmed", rating: 5, comment: "Loved the ambience and the taste. Highly recommended!" },
+  ]);
+
+  const [newReview, setNewReview] = useState("");
+
   const { id } = useParams();
   const selectedRestaurant = restaurant.find((r) => r.id.toString() === id);
 
@@ -44,6 +52,28 @@ const RestaurantDetail = () => {
 
     // Reset button after 2 sec
     setTimeout(() => setAdded(false), 2000);
+  };
+
+  // ✅ Related products (same category except current)
+  const relatedRestaurants = restaurant.filter(
+    (r) => r.category === selectedRestaurant.category && r.id !== selectedRestaurant.id
+  );
+
+
+  //Reviews
+  
+  // ✅ Handle Submit Review
+  const handleSubmit = () => {
+    if (newReview.trim() === "") return;
+
+    const review = {
+      name: "Guest User", // default naam (ya tum input le sakte ho)
+      rating: 5, // default ⭐ (ya dropdown bana sakte ho)
+      comment: newReview,
+    };
+
+    setReviews([review, ...reviews]); // naya review top pe add hoga
+    setNewReview(""); // textarea clear
   };
 
   return (
@@ -117,6 +147,51 @@ const RestaurantDetail = () => {
             {added ? "Added ✅" : "Add to Cart"}
           </button>
         </div>
+      </div>
+
+      {/* ✅ Related Products */}
+      {relatedRestaurants.length > 0 && (
+        <div className="mt-5">
+          <h3 className="fw-bold mb-4 border-start border-4 border-primary ps-3">
+            Related Restaurants
+          </h3>
+          <div className="row g-4">
+            {relatedRestaurants.slice(0, 4).map((res) => (
+              <RestaurantCard key={res.id} restaurant={res}  />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* ✅ Reviews & Comments Section */}
+      <div className="mt-5 row">
+        <h3 className="fw-bold mb-4 border-start border-4 border-warning ps-3">
+          Customer Reviews
+        </h3>
+        <div className="col-md-8">
+      {/* Show Reviews */}
+      {reviews.map((rev, index) => (
+        <div key={index} className="mb-3 p-3 border rounded shadow-sm bg-light">
+          <strong>{rev.name}</strong> {"⭐".repeat(rev.rating)}{"☆".repeat(5 - rev.rating)}
+          <p className="mb-0">{rev.comment}</p>
+        </div>
+      ))}
+
+      {/* Add Comment Form */}
+      <div className="mt-4">
+        <h5 className="fw-bold">Leave a Comment</h5>
+        <textarea
+          className="form-control mb-3"
+          rows="3"
+          placeholder="Write your review..."
+          value={newReview}
+          onChange={(e) => setNewReview(e.target.value)}
+        ></textarea>
+        <button className="btn btn-primary" onClick={handleSubmit}>
+          Submit Review
+        </button>
+      </div>
+    </div>
       </div>
 
       {/* Toast Container */}

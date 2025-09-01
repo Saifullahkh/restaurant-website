@@ -319,13 +319,60 @@ const Navbar = () => {
           <div className="border-top mx-4 my-3"></div>
           
           <div className="px-4">
-            <Link 
-              to="/login" 
-              className="btn btn-success w-100 rounded-pill d-flex align-items-center justify-content-center gap-2 py-2"
-              onClick={() => document.getElementById('offcanvasCloseBtn').click()}
-            >
-              <FaSignInAlt /> Login / Register
-            </Link>
+           <li className="nav-item mx-2 d-none d-md-inline">
+                  {user ? (
+                    // ✅ Avatar instead of Login button
+                    <div className="dropdown">
+                      <button
+                        className="btn btn-light rounded-circle border d-flex align-items-center justify-content-center"
+                        type="button"
+                        id="avatarMenu"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        style={{ width: "40px", height: "40px" }}
+                      >
+                        <FaUser />
+                      </button>
+                      <ul
+                        className="dropdown-menu dropdown-menu-end shadow mt-2"
+                        aria-labelledby="avatarMenu"
+                        style={{ maxWidth: "250px" }}
+                      >
+                        <li>
+                          <a className="dropdown-item" href="#profile">
+                            Profile
+                          </a>
+                        </li>
+                        <li>
+                          <a className="dropdown-item" href="#privacy">
+                            Privacy
+                          </a>
+                        </li>
+                        <li>
+                          <hr  />
+                        </li>
+                        <li>
+                          <button
+                            className="dropdown-item text-danger"
+                            onClick={handleLogout}
+                          >
+                            Logout
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  ) : (
+                    // ✅ Login button
+                    <button
+                      className="btn btn-success rounded-pill d-flex align-items-center px-3"
+                      type="button"
+                      onClick={() => setShowLogin(true)}
+                    >
+                      <FaUser className="me-1" />
+                      <span className="d-none d-md-inline">Login / Register</span>
+                    </button>
+                  )}
+                </li>
           </div>
           
           {/* Hidden close button to programmatically close the offcanvas */}
